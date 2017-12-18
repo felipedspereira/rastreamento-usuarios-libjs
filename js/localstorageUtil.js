@@ -1,3 +1,6 @@
+/**
+ * Utilities to persist data in the localstorage
+ */
 var dbUtil = (function () {
     var ACTIVITIES_ENTRY = 'activities';
     var EMAIL_ENTRY = 'email';
