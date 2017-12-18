@@ -1,6 +1,6 @@
 # trackingJS
 
-A javascript library used to monitor users activities in a website
+A javascript library used to monitor users activities in a website and send activities information (acessed pages) to the [rastreamento-usuarios-app](https://github.com/felipedspereira/rastreamento-usuarios-aplicacao)
 
 ## Installation
 
