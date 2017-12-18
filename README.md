@@ -19,4 +19,5 @@ trackingJS.config('<HOST_BACKEND>/activity')
 
 In the command above, **<HOST_BACKEND>** needs to be the url mapped to the address of the application [rastreamento-usuarios-aplicacao](https://github.com/felipedspereira/rastreamento-usuarios-aplicacao), which is the app responsible to receive the data. For example, if your rastreamento-usuarios-aplicacao is hosted at https://example-aplicacao, then the backend address needs to be mapped as https://example-aplicacao/activity
 <br>
+<br>
 At this point, the data collected will be stored locally in the user's browser. To start send the information remotelly to the backend [rastreamento-usuarios-aplicacao](https://github.com/felipedspereira/rastreamento-usuarios-aplicacao), you need to send a POST request with the user email to the URL **<HOST_BACKEND>/enableActivity**. The field email must be passed in a x-www-form-urlencoded format.
