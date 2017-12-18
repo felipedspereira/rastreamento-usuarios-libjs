@@ -17,7 +17,7 @@ To start sending informations about the user activities in your site, you should
 trackingJS.config('<HOST_BACKEND>/activity')
 ```
 
-In the command above, **<HOST_BACKEND>** needs to be the url mapped to the address of the application rastreamento-usuarios-aplicacao, which is the app responsible to receive the data. 
+In the command above, **<HOST_BACKEND>** needs to be the url mapped to the address of the application [rastreamento-usuarios-aplicacao](https://github.com/felipedspereira/rastreamento-usuarios-aplicacao), which is the app responsible to receive the data. 
 <br>
 For example, if your rastreamento-usuarios-aplicacao is hosted at https://example-aplicacao, then the address needs to be https://example-aplicacao/activity
 <br>
