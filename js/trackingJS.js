@@ -5,10 +5,9 @@
  * License: MIT
  * 
  * github: 
- */
-var trackingJS = (function (window) {
+ */ 
+var trackingJS = (function (window, dbUtil) {
     var url = null;
-    var urlOfActivation = null;
     var ACTIVITIES_ENTRY = 'activities';
     var EMAIL_ENTRY = 'email';
 
@@ -22,18 +21,18 @@ var trackingJS = (function (window) {
             throw "No url supplied to trackingJS. You need to call trackingJS(someUrl) in order to get trackingJS monitoring the activities navigation";
         }
 
-        var activities = getActivitiesFromLocalstorage();
+        var activities = dbUtil.getActivities();
         activities.push({
             url: window.location.href,
             date: new Date()
         });
 
         // Decides whether send data to localstorage or backend
-        var userEmail = getUserEmail();
+        var userEmail = dbUtil.getUserEmail();
         if (userEmail) {
             sendDataToBackend(userEmail, activities);
         } else {
-            updateActivitiesInLocalstorage(activities);
+            dbUtil.updateActivities(activities);
         }
     }
 
@@ -49,25 +48,8 @@ var trackingJS = (function (window) {
             })
         };
         fetch(url, options).then(function (res) {
-            cleanLocalstorageActivities(userActivities);
+            dbUtil.cleanActivities(userActivities);
         });
-    }
-
-    var updateActivitiesInLocalstorage = function (activities) {
-        localStorage.setItem(ACTIVITIES_ENTRY, JSON.stringify(activities));
-    }
-
-    var getActivitiesFromLocalstorage = function () {
-        return JSON.parse(localStorage.getItem(ACTIVITIES_ENTRY) || '[]');
-    }
-
-    var getUserEmail = function () {
-        return localStorage.getItem(EMAIL_ENTRY);
-    }
-
-    var cleanLocalstorageActivities = function (activities) {
-        activities = [];
-        localStorage.setItem(ACTIVITIES_ENTRY, JSON.stringify(activities));
     }
 
     /**
@@ -80,7 +62,7 @@ var trackingJS = (function (window) {
     };
 
     var activateUser = function(data) {
-        localStorage.setItem(EMAIL_ENTRY, data);
+        dbUtil.persistEmail(data);
         console.log('usuario ' + data + " ativado com sucesso ")
     }
 
@@ -89,4 +71,4 @@ var trackingJS = (function (window) {
         activateUser: activateUser
     };
 
-})(window);
+})(window, dbUtil);
