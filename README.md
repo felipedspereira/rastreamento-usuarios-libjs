@@ -11,7 +11,7 @@ Just put the field dist/trackingJS.min.js in your project, then import it in the
 
 ## How it works
 
-To start sending informations about the user activities in your site, you should configure the trackingJS in a way the it knows where to send the data collected. You do this with the following command:
+To start sending informations about the user activities in your site, you should configure the trackingJS in a way that it knows to where to send the collected data. You do this with the following command:
 
 ```
 trackingJS.config('<HOST_BACKEND>/activity')
