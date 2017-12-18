@@ -4,7 +4,7 @@ A javascript library used to monitor users activities in a website
 
 ## Installation
 
-Just put the fiel dist/trackingJS.min.js in your project, then import it in the index.html of your application, like this:
+Just put the field dist/trackingJS.min.js in your project, then import it in the index.html of your application, like this:
 ```
 <script src="libs/trackingJS.min.js"></script>
 ```
