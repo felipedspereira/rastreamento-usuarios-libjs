@@ -8,9 +8,7 @@
  */ 
 var trackingJS = (function (window, dbUtil) {
     var url = null;
-    var ACTIVITIES_ENTRY = 'activities';
-    var EMAIL_ENTRY = 'email';
-
+    
     // Register for non ajax requests
     window.addEventListener("load", function () {
         sendStatistic();
